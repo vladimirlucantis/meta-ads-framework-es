@@ -109,7 +109,7 @@ Reels de más de 30 segundos caen en CTR. Reels de menos de 15 segundos no gener
 - Duración: 18 a 22 segundos
 - Persona a cámara, mirando a los ojos
 
-Ver `creativos-fria-caliente.md` para profundizar.
+Ver `creativos-por-estrategia.md` para profundizar.
 
 ## Iteración de creativos
 

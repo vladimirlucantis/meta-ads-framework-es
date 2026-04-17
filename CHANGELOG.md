@@ -5,6 +5,29 @@ Todas las novedades relevantes de este proyecto se documentan acá.
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Este proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.2.1] - 2026-04-17
+
+### Corregido
+
+- Link roto en `references/estructura-reels.md` que apuntaba a `creativos-fria-caliente.md` (archivo eliminado en v0.2.0). Ahora apunta a `creativos-por-estrategia.md`
+- Frontmatter de `SKILL.md`: descripción reducida de ~800 a ~400 caracteres para mejorar matching de activación. Removido lenguaje imperativo ("Usar SIEMPRE")
+- Frontmatter de `SKILL.md`: eliminado bloque `metadata:` no estándar en spec de Agent Skills (author/version/language/category). Información preservada en el body como blockquote
+
+### Añadido
+
+- 2 casos nuevos en `examples/analisis-campania.md`:
+  - Caso 5: Segmentación manual por intereses (4 ad sets por interés, diagnóstico individual, pausa del perdedor y escalado del ganador)
+  - Caso 6: WhatsApp/Mensajes puro (objetivo Conversaciones, distingue capa Meta vs capa negocio, aborda "pixel 0 conversiones" como esperable)
+- 2 casos nuevos en `examples/guion-reel.md`:
+  - Caso 2: Guión FRIA (prospecting) para consultoría contable, mismo negocio del Caso 1 para comparación directa
+  - Caso 3: Creative testing con 3 variantes de hook (dolor / solución / testimonio), cuerpo y cierre compartidos
+- Blockquote en `SKILL.md` con autor, versión, idioma y categoría (reemplaza metadata de frontmatter)
+
+### Notas
+
+- Sin breaking changes. Cambios solo de forma (frontmatter) y cobertura de ejemplos
+- Los 6 casos de análisis + 3 casos de guión ahora cubren las 5 estrategias del skill
+
 ## [0.2.0] - 2026-04-17
 
 ### Añadido

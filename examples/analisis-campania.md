@@ -156,3 +156,123 @@ CREAR: 3 variantes nuevas para testear contra "Testimonio" en un ad set paralelo
 **Insight**
 
 Los testimonios consistentemente ganan en rubros de servicio/artesanal. Considerá grabar 2-3 testimonios más de clientes que ya pasaron por el taller.
+
+---
+
+## Caso 5: Segmentación manual por intereses
+
+### Prompt del usuario
+
+> Tengo una campaña de ventas para mi tienda de suplementos deportivos. 14 días corriendo, USD 280 gastados. Armé 4 ad sets distintos por interés:
+>
+> **AD SET Crossfit** (USD 80) - 14 compras, costo/compra USD 5.71, ROAS 3.2, CTR 2.1%, frecuencia 1.6
+> **AD SET Running** (USD 70) - 11 compras, costo/compra USD 6.36, ROAS 2.9, CTR 1.8%, frecuencia 1.7
+> **AD SET Gimnasio general** (USD 75) - 4 compras, costo/compra USD 18.75, ROAS 1.1, CTR 1.2%, frecuencia 2.4
+> **AD SET Nutrición deportiva** (USD 55) - 9 compras, costo/compra USD 6.11, ROAS 3.0, CTR 2.3%, frecuencia 1.5
+>
+> El ticket promedio es USD 28. ¿Qué hago?
+
+### Respuesta del skill
+
+Veo que estás usando segmentación manual por intereses, con 4 ad sets apuntando a clusters distintos. Los umbrales se aplican por ad set individualmente, no al total de la campaña.
+
+**Dashboard**
+
+| Ad set | Gasto | Compras | Costo/compra | ROAS | Frec |
+|---|---|---|---|---|---|
+| Crossfit | USD 80 | 14 | USD 5.71 | 3.2 | 1.6 |
+| Running | USD 70 | 11 | USD 6.36 | 2.9 | 1.7 |
+| Gimnasio general | USD 75 | 4 | USD 18.75 | 1.1 | 2.4 |
+| Nutrición deportiva | USD 55 | 9 | USD 6.11 | 3.0 | 1.5 |
+| **Total** | USD 280 | 38 | USD 7.37 | 2.7 | — |
+
+**Diagnóstico por ad set**
+
+- **Crossfit** → ganador claro. ROAS 3.2 (excelente), costo/compra 20% del ticket (aceptable), frecuencia sana. Mantener
+- **Nutrición deportiva** → fuerte. ROAS 3.0, costo/compra similar al Crossfit. Mantener y considerar escalar +20%
+- **Running** → aceptable. ROAS 2.9 en zona buena. Dejar correr una semana más antes de decidir
+- **Gimnasio general** → pausar. Tres señales: ROAS 1.1 (< 1.5 umbral de pausa), costo/compra 67% del ticket (> 30%), frecuencia 2.4 supera umbral manual (2.2). El interés es demasiado amplio, no resuena
+
+**Plan de acción**
+
+```
+PAUSAR:
+- Ad set Gimnasio general - ROAS sub-umbral + frecuencia saturada
+
+MANTENER SIN TOCAR:
+- Ad set Crossfit - ganador, no tocar
+- Ad set Running - dejar 7 días más
+
+ESCALAR:
+- Ad set Nutrición deportiva - subir presupuesto +20% (USD 55 → USD 66) el próximo lunes
+- Ad set Crossfit - mismo aumento una semana después si sostiene performance
+
+CREAR:
+- Testear 1 ad set nuevo con interés más nichado (ej: "Powerlifting" o "Maratonistas") con el presupuesto liberado de Gimnasio general
+```
+
+Próxima revisión: 7 días.
+
+**Insight**
+
+Los intereses amplios como "Gimnasio" suelen perder contra nichos específicos (Crossfit, Running). Cuando tenés audiencias definidas por comportamiento real, el interés genérico no agrega, fragmenta.
+
+---
+
+## Caso 6: WhatsApp/Mensajes puro (objetivo Conversaciones)
+
+### Prompt del usuario
+
+> Tengo un estudio de psicología online. Hago campañas de Mensajes para que me escriban por WhatsApp. 1 sola campaña con 1 ad set, objetivo Conversaciones. 21 días, USD 90 gastados.
+>
+> - 180 conversaciones iniciadas, costo/conv USD 0.50
+> - CTR 3.8%, CPM USD 2.10, frecuencia 2.1
+> - De esas 180, cerré 14 pacientes nuevos a USD 50 la primera sesión
+>
+> El pixel está instalado pero dice "0 conversiones" porque cobro por transferencia. ¿Va bien la campaña?
+
+### Respuesta del skill
+
+Veo que estás usando estrategia WhatsApp/Mensajes puro (objetivo Conversaciones). El pixel no aplica acá: la conversión real ocurre en la conversación, no en el sitio web. Los umbrales son propios de este objetivo.
+
+**Dashboard**
+
+| Métrica | Valor | Estado |
+|---|---|---|
+| Gasto | USD 90 | — |
+| Conversaciones | 180 | — |
+| Costo/conversación | USD 0.50 | Aceptable (umbral 0.35-0.65) |
+| CTR | 3.8% | Aceptable (2-5%) |
+| CPM | USD 2.10 | Aceptable |
+| Frecuencia | 2.1 | Dentro de umbral manual (< 2.2) |
+| Pacientes cerrados | 14 | — |
+| CPA real (USD 90 / 14) | USD 6.43 | — |
+| Tasa conversación→paciente | 7.8% | — |
+
+**Diagnóstico**
+
+La métrica que mira Meta (costo/conversación) está en zona aceptable. Pero la métrica que mira tu negocio (costo por paciente nuevo) es USD 6.43 contra un ticket primera sesión de USD 50 → ROAS aproximado 7.7x. Excelente.
+
+El "0 conversiones" del pixel es esperable y no es problema: el pixel no puede ver transferencias bancarias ni cierres por WhatsApp. No perseguir ese número.
+
+**Plan de acción**
+
+```
+MANTENER SIN TOCAR:
+- La campaña completa. Sub-umbral en ambas capas (conv y paciente)
+
+CONFIGURAR (acción estructural, no urgente):
+- Audiencia personalizada con lista de pacientes actuales (necesitás 100+ contactos)
+- Una vez cargada, crear lookalike 1% sobre esa audiencia para un ad set nuevo
+- Considerar evento offline: subir CSV con teléfonos de pacientes cerrados y fechas, para que Meta atribuya conversiones reales
+
+ESCALAR (si la operación lo soporta):
+- Si podés atender más pacientes, subir presupuesto +20% (USD 90/21 días → USD 5.15/día → USD 6.20/día)
+- Si la agenda ya está llena, NO escalar, cuidar el costo/conv actual
+```
+
+**Insight**
+
+La tasa conversación→paciente del 7.8% es buena para psicología (rubro donde el cierre depende mucho de química y precio). Si bajás de 5%, el problema no es la campaña sino el primer mensaje que mandás por WhatsApp. Vale la pena revisar plantillas de respuesta antes de tocar la campaña.
+
+Próxima revisión: 14 días o cuando termines de configurar la audiencia personalizada de pacientes.

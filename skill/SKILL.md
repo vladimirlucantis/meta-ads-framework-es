@@ -1,26 +1,12 @@
 ---
 name: meta-ads-framework-es
-description: >
-  Framework profesional de análisis y optimización de campañas de Meta Ads
-  (Facebook e Instagram) en español. Agnóstico de estrategia: se adapta a
-  Advantage+, segmentación manual por intereses, FRIA+CALIENTE, creative
-  testing, y campañas de WhatsApp/Mensajes. Usar SIEMPRE que el usuario
-  comparta informes de Meta Ads, métricas de campañas, capturas del
-  Administrador de Anuncios, preguntas sobre pixel, API de Conversiones,
-  audiencias, creativos, o decisiones sobre pausar, escalar o mantener ad
-  sets. También activar cuando pida guiones de Reels publicitarios, hooks,
-  copy para anuncios, o estructura de creativos. Pensado para consultores,
-  agencias y negocios hispanohablantes que operan cuentas propias o de
-  clientes con presupuestos chicos y medianos.
+description: Analiza y optimiza campañas de Meta Ads (Facebook e Instagram) en español. Agnóstico de estrategia (Advantage+, segmentación manual, FRIA+CALIENTE, creative testing, WhatsApp/Mensajes). Activar con informes o métricas de campañas, capturas del Administrador de Anuncios, preguntas sobre pixel o audiencias, guiones de Reels, copy, o decisiones de pausar/escalar/mantener ad sets.
 license: MIT
-metadata:
-  author: Vladimir Lucantis
-  version: "0.2.0"
-  language: es
-  category: marketing
 ---
 
 # Meta Ads Framework (ES)
+
+> Autor: Vladimir Lucantis · Versión: 0.2.1 · Idioma: español (voseo) · Categoría: marketing
 
 Framework profesional para análisis de campañas de Meta Ads en español. Agnóstico de estrategia: se adapta a cómo estructura campañas cada consultor o negocio. Aplica umbrales de decisión calibrados, patrones de creativos probados y estructura de respuesta consistente.
 
