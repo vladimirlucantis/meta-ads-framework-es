@@ -30,14 +30,17 @@ Activado automáticamente cuando le hablás a Claude de:
 - Configuración de pixel, API de Conversiones, audiencias
 - Guiones de Reels publicitarios
 - Copy para anuncios y hooks
-- Diferencia entre públicos FRÍOS y CALIENTES
+- Cualquier estrategia de campaña: Advantage+, segmentación manual por intereses, FRIA+CALIENTE, creative testing, WhatsApp/Mensajes
 - Decisiones de escalar, pausar o mantener ad sets
+
+**Clave desde v0.2.0**: el skill es agnóstico de estrategia. Antes de diagnosticar identifica cuál de las 5 estrategias más comunes estás usando, y aplica umbrales y patrones específicos de esa estrategia. No impone una forma única de estructurar campañas.
 
 Devuelve:
 
+- Identificación de la estrategia detectada
 - Diagnósticos por campaña y por ad set
 - Planes de acción concretos (pausar X, escalar Y, esperar Z)
-- Guiones de Reels estructurados (gancho + cuerpo + cierre)
+- Guiones de Reels estructurados según la estrategia
 - Recomendaciones de audiencias y segmentación
 
 ## Instalación
@@ -72,9 +75,10 @@ Ver [examples/guion-reel.md](./examples/guion-reel.md).
 skill/
 ├── SKILL.md                          # Instrucciones principales del skill
 └── references/
-    ├── metricas-umbrales.md          # Umbrales de decisión por métrica
+    ├── estrategias-campania.md       # 5 estrategias de campaña y cómo diagnosticar cada una
+    ├── metricas-umbrales.md          # Umbrales de decisión por métrica (con variantes por estrategia)
     ├── estructura-reels.md           # Formato de Reels publicitarios
-    ├── creativos-fria-caliente.md    # Diferenciación de creativos por audiencia
+    ├── creativos-por-estrategia.md   # Adaptación de creativos según estrategia
     └── pixel-setup.md                # Checklist de configuración de pixel
 ```
 

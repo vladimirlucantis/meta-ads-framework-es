@@ -5,6 +5,37 @@ Todas las novedades relevantes de este proyecto se documentan acá.
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 Este proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.2.0] - 2026-04-17
+
+### Añadido
+
+- Nueva referencia `estrategias-campania.md` con las 5 estrategias más comunes de Meta Ads (Advantage+, segmentación manual, FRIA+CALIENTE, creative testing, WhatsApp/Mensajes)
+- Sección "Paso 0: Detectar estrategia" en SKILL.md que obliga a identificar la estrategia del usuario antes de diagnosticar
+- Umbrales de decisión específicos por estrategia en `metricas-umbrales.md` (frecuencia distinta para Advantage+ vs manual vs retargeting)
+- Umbrales para objetivo "Leads" (formularios)
+- Nuevo ejemplo `analisis-campania.md` con 4 casos distintos: FRIA+CALIENTE, Advantage+ puro, estrategia ambigua (el skill pregunta), creative testing
+
+### Cambiado
+
+- Renombrado `creativos-fria-caliente.md` a `creativos-por-estrategia.md` con adaptación de creativos para las 5 estrategias
+- SKILL.md refactorizado para ser agnóstico de estrategia. Ya no asume FRIA+CALIENTE como universal
+- Descripción del frontmatter actualizada para reflejar soporte multi-estrategia
+- Principios generales reformulados: "FRIA y CALIENTE se optimizan distinto" reemplazado por "Cada estrategia se evalúa con su propia vara"
+- Ejemplo de análisis de campaña ampliado de 1 caso a 4 casos cubriendo distintas estrategias
+- Formato de respuesta: la primera línea ahora identifica la estrategia detectada
+
+### Deprecado
+
+- Nada. Es un breaking change en estructura pero retrocompatible en comportamiento: el skill sigue funcionando bien con casos FRIA+CALIENTE, solo que ahora también funciona con otras estrategias
+
+### Motivación
+
+Feedback de un usuario real (y co-autor) del skill:
+
+> "El tema de las audiencias FRIA/CALIENTE es personalmente algo que hago yo, hay quienes van a utilizar otra estrategia, por lo tanto necesito que la skill se pueda adapte a las diferentes estrategias de campañas en meta ads"
+
+El skill v0.1.0 reflejaba la estrategia personal del autor. v0.2.0 lo convierte en una herramienta agnóstica de estrategia que sirve a cualquier media buyer.
+
 ## [0.1.0] - 2026-04-17
 
 ### Añadido
@@ -12,7 +43,7 @@ Este proyecto usa [Versionado Semántico](https://semver.org/lang/es/).
 - Skill inicial `meta-ads-framework-es` con instrucciones en español
 - Referencia `metricas-umbrales.md` con umbrales de decisión por métrica
 - Referencia `estructura-reels.md` con formato de Reels publicitarios (gancho/cuerpo/cierre)
-- Referencia `creativos-fria-caliente.md` con diferenciación por tipo de audiencia
+- Referencia `creativos-fria-caliente.md` con diferenciación por tipo de audiencia (reemplazada en v0.2.0)
 - Referencia `pixel-setup.md` con checklist de configuración de pixel y API de Conversiones
 - Ejemplo `analisis-campania.md` mostrando diagnóstico completo de campaña de mensajes
 - Ejemplo `guion-reel.md` mostrando estructura de Reel retargeting
